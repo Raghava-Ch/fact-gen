@@ -1,0 +1,158 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'treeedb'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=treeedb"
+                ],
+                "filter": {
+                    "name": "treeedb",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'treeedb-c'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=treeedb-c",
+                    "--package=treeedb-c"
+                ],
+                "filter": {
+                    "name": "treeedb-c",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'treeedb-c'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=treeedb-c",
+                    "--package=treeedb-c"
+                ],
+                "filter": {
+                    "name": "treeedb-c",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'treeedbgen'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=treeedbgen"
+                ],
+                "filter": {
+                    "name": "treeedbgen",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'treeedbgen-souffle'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=treeedbgen-souffle"
+                ],
+                "filter": {
+                    "name": "treeedbgen-souffle",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'treeedbgen-souffle-c'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=treeedbgen-souffle-c",
+                    "--package=treeedbgen-souffle-c"
+                ],
+                "filter": {
+                    "name": "treeedbgen-souffle-c",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'treeedbgen-souffle-c'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=treeedbgen-souffle-c",
+                    "--package=treeedbgen-souffle-c"
+                ],
+                "filter": {
+                    "name": "treeedbgen-souffle-c",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'main'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=main",
+                    "--package=treeedbgen-souffle-c"
+                ],
+                "filter": {
+                    "name": "main",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

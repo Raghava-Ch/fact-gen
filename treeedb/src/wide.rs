@@ -41,9 +41,9 @@ impl FactConsumer for WideCsvConsumer {
         Ok(())
     }
 
-    fn child(&mut self, parent: &Node<'_>, child: &Node<'_>) -> Result<(), Self::Err> {
+    fn child(&mut self, parent: &Node<'_>, child: &Node<'_>, index: usize) -> Result<(), Self::Err> {
         self.child
-            .write_record([&parent.id().to_string(), &child.id().to_string()])?;
+            .write_record([&parent.id().to_string(), &child.id().to_string(), &index.to_string()])?;
         Ok(())
     }
 

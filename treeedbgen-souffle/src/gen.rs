@@ -103,7 +103,7 @@ fn node_with_fields(
             )?;
             writeln!(
                 w,
-                "{}(x, as(y, {})) :- {}{}(x), {}child(x, y).",
+                "{}(x, as(y, {})) :- {}{}(x), {}child(x, y, _).",
                 child_relation_name,
                 child_type_name,
                 config.relation_prefix,
@@ -203,6 +203,7 @@ impl PrivGenConfig {
 }
 
 fn declare_node(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenError> {
+    writeln!(w, ".type {}Index <: number", config.type_prefix)?;
     writeln!(w, ".type {}NodeKind <: symbol", config.type_prefix)?;
     writeln!(w, ".type {}IsNamed <: symbol", config.type_prefix)?;
     writeln!(w, ".type {}IsError <: symbol", config.type_prefix)?;
@@ -291,6 +292,7 @@ fn declare_child(config: &PrivGenConfig, w: &mut impl Write) -> Result<(), GenEr
         [
             format!("parent: {}Node", config.type_prefix),
             format!("child: {}Node", config.type_prefix),
+            format!("index: {}Index", config.type_prefix),
         ]
         .join(", ")
     )?;
